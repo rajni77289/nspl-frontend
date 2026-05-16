@@ -1,0 +1,77 @@
+import React from "react";
+import { useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+
+function Signup() {
+    const [data, setData] = useState();
+    console.log(data);
+
+    const navigete = useNavigate()
+
+    function getValue(e) {
+        setData({
+            // spread opratore
+            ...data,
+            [e.target.name]: e.target.value
+        })
+    }
+    async function handleSubmit(e) {
+        e.preventDefault()
+        // check: the API
+        const senddata = await axios.post("http://localhost:8000/postdata", data).then((res) => {
+            console.log(res.data.status)
+            if (res.data.status) {
+                toast.success("successfull signup")
+                setTimeout(() => {
+                    navigete('/')
+                }, 1000)
+            }
+            else {
+                toast.error("Invelid")
+            }
+        })
+    }
+    return (
+        <>
+            <Toaster />
+            {/* <div className="main">
+            <form onSubmit={handleSubmit} className="mainform">
+                <h1>Signup</h1>
+                <div className="text">
+                    <input type="text" name="username" placeholder="User Name" onChange={getValue} />
+                </div>
+                <div className="text">
+                    <input type="text" name="email" placeholder="Email" onChange={getValue} />
+                </div>
+                <div className="text">
+                    <input type="text" name="password" placeholder="Password" onChange={getValue} />
+                </div>
+                <button type="Submit" className="forbtn">Submit</button>
+            </form>
+            </div> */}
+            <div className="signup-container">
+                <form onSubmit={handleSubmit} className="signup-form">
+                    <h1 className="signup-title">Signup</h1>
+
+                    <div className="form-group">
+                        <input type="text" name="username" placeholder="User Name" onChange={getValue} />
+                    </div>
+
+                    <div className="form-group">
+                        <input type="text" name="email" placeholder="Email" onChange={getValue} />
+                    </div>
+
+                    <div className="form-group">
+                        <input type="text" name="password" placeholder="Password" onChange={getValue} />
+                    </div>
+                    <button type="submit" className="signup-btn">Submit</button>
+                    <p className="parasig">Already have an account?  <Link to={'/login'}>Login</Link></p>
+                </form>
+            </div>
+        </>
+    )
+}
+export default Signup

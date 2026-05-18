@@ -21,7 +21,7 @@ function Signup() {
     async function handleSubmit(e) {
         e.preventDefault()
         // check: the API
-        const senddata = await axios.post("http://localhost:8000/postdata", data).then((res) => {
+        await axios.post("http://localhost:8000/postdata", data).then((res) => {
             console.log(res.data.status)
             if (res.data.status) {
                 toast.success("successfull signup")
@@ -36,23 +36,8 @@ function Signup() {
     }
     return (
         <>
-            <Toaster />
-            {/* <div className="main">
-            <form onSubmit={handleSubmit} className="mainform">
-                <h1>Signup</h1>
-                <div className="text">
-                    <input type="text" name="username" placeholder="User Name" onChange={getValue} />
-                </div>
-                <div className="text">
-                    <input type="text" name="email" placeholder="Email" onChange={getValue} />
-                </div>
-                <div className="text">
-                    <input type="text" name="password" placeholder="Password" onChange={getValue} />
-                </div>
-                <button type="Submit" className="forbtn">Submit</button>
-            </form>
-            </div> */}
-            <div className="signup-container">
+      <Toaster />
+           <div className="signup-container">
                 <form onSubmit={handleSubmit} className="signup-form">
                     <h1 className="signup-title">Signup</h1>
 

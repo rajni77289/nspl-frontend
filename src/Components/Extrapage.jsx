@@ -57,3 +57,7 @@
 //         )
 //     }
 //     export default EditEnformation 
+
+
+
+// student detail se waring aaraha h

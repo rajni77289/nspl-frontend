@@ -1,14 +1,14 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import Home from './Components/Layout/Home';
-import { BrowserRouter, Form, Route, Routes } from 'react-router-dom';
+// import Home from './Components/Layout/Home';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Signup from './Components/Auth/Signup';
 import Login from './Components/Auth/Login';
 import Stuform from './Components/Auth/Stuform';
 import Studentdetails from './Components/Layout/Studentdetails';
 import Profiles from './Components/Layout/Profiles/Profile';
-import Update from './Components/Layout/Update';
-import PrivateRouter from './Components/PrivateRoutes/PrivateRoute';
+// import Update from './Components/Layout/Update';
+// import PrivateRouter from './Components/PrivateRoutes/PrivateRoute';
 import PrivateRoute from './Components/PrivateRoutes/PrivateRoute';
 import NotFound from './Components/Utility/NotFound';
 import Teacher from './Components/Teachers/Teacher';
@@ -18,6 +18,7 @@ import Dashboard from './Components/Layout/Dashboard';
 import TechRegistation from './Components/Teachers/TechRegistation';
 import Student from './Components/Layout/Student';
 import Attendance from './Components/Teachers/TeachAttendance/Attendance';
+import TeachDetails from './Components/Teachers/TeachDetails';
 function App() {
   return (
     <>
@@ -34,6 +35,7 @@ function App() {
             <Route path='/stuform' element={<PrivateRoute><Stuform /></PrivateRoute>} />
             {/* <Route path='/studentdetails/:id' element={<PrivateRoute><Studentdetails /></PrivateRoute>} /> */}
             <Route path='/techregistation' element={<PrivateRoute><TechRegistation /></PrivateRoute>} />
+            <Route path='/teachdetails/:id' element={<PrivateRoute><TeachDetails/></PrivateRoute>}/>
             <Route path='/attendance' element={<PrivateRoute><Attendance /></PrivateRoute>} />
             <Route path='/studentdetails/:id' element={<PrivateRoute><Studentdetails /></PrivateRoute>} />
 

@@ -1,29 +1,31 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, Outlet, useNavigate } from "react-router-dom";
-import { FaEye, FaUser } from "react-icons/fa6";
+// import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { FaEye } from "react-icons/fa6";
+// import { FaUser } from "react-icons/fa6";
 
 function Student() {
 
     const [studentdata, setStudentdata] = useState([])
     console.log(studentdata)
 
-    const nav = useNavigate()
+    // const nav = useNavigate()
 
     const [Bca, setBca] = useState([]);
-    const [Bba, setBba] = useState([]);
+    // const [Bba, setBba] = useState([]);
     const [Mba, setMba] = useState([]);
     const [Mca, setMca] = useState([]);
     const [Iti, setIti] = useState([]);
-    const [Ba, setBa]=useState([]);
-    const [Bcom, setBcom] = useState([]);
-    const [Bsc, setBsc] = useState([]);
+    // const [Ba, setBa]=useState([]);
+    // const [Bcom, setBcom] = useState([]);
+    // const [Bsc, setBsc] = useState([]);
 
     
 
     async function getStudents() {
-        const res = await axios.get("http://localhost:8000/studentgetdata").then((res) => {
+     await axios.get("http://localhost:8000/studentgetdata").then((res) => {
             console.log(res.data.user)
             setStudentdata(res.data.user)
 
@@ -35,37 +37,37 @@ function Student() {
             // setBca(bcastudent2)
 
             const students = res.data.user
-            const bcaStudents = students.filter((item) => item.course == "bca")
+            const bcaStudents = students.filter((item) => item.course === "bca")
             setBca(bcaStudents)
 
-            const bbaStudents = students.filter((item) => item.course == "bba")
-            setBba(bbaStudents)
+            // const bbaStudents = students.filter((item) => item.course == "bba")
+            // setBba(bbaStudents)
 
-            const mbaStudents = students.filter((item) => item.course == "mba")
+            const mbaStudents = students.filter((item) => item.course === "mba")
             setMba(mbaStudents)
 
-            const mcaStudents = students.filter((item) => item.course == "mca")
+            const mcaStudents = students.filter((item) => item.course === "mca")
             setMca(mcaStudents)
 
-            const itiStudents = students.filter((item) => item.course == "iti")
+            const itiStudents = students.filter((item) => item.course === "iti")
             setIti(itiStudents);
 
-            const baStudents = students.filter((item) => item.course == "ba")
-            setIti(baStudents);
+            // const baStudents = students.filter((item) => item.course == "ba")
+            // setIti(baStudents);
 
-            const bcomStudents = students.filter((item) => item.course == "bcom")
-            setIti(bcomStudents);
+            // const bcomStudents = students.filter((item) => item.course == "bcom")
+            // setIti(bcomStudents);
 
-            const bscStudents = students.filter((item) => item.course == "bsc")
-            setIti(bscStudents);
+            // const bscStudents = students.filter((item) => item.course == "bsc")
+            // setIti(bscStudents);
         })
     }
 
 
-    function logout() {
-        localStorage.removeItem("nsplAuth")
-        nav('/login')
-    }
+    // function logout() {
+    //     localStorage.removeItem("nsplAuth")
+    //     nav('/login')
+    // }
 
 
     useEffect(() => {
@@ -83,7 +85,7 @@ function Student() {
                     </div>
                     <div className="cart">
                         <p>BBA Students</p>
-                        <h2>{Bba.length}</h2>
+                        {/* <h2>{Bba.length}</h2> */}
                     </div>
                     <div className="cart">
                         <p>MBA Students</p>
@@ -101,15 +103,15 @@ function Student() {
                     </div>
                     <div className="cart">
                         <p>B.A Students</p>
-                        <h2>{Ba.length}</h2>
+                        {/* <h2>{Ba.length}</h2> */}
                     </div>
                     <div className="cart">
                         <p>B.com Students</p>
-                        <h2>{Bcom.length}</h2>
+                        {/* <h2>{Bcom.length}</h2> */}
                     </div>
                     <div className="cart">
                         <p>B.sc Students</p>
-                        <h2>{Bsc.length}</h2>
+                        {/* <h2>{Bsc.length}</h2> */}
                     </div>
                 </div>
             </div>

@@ -1,10 +1,11 @@
-import react from "react";
+import React from "react";
 import { useState } from "react";
 import axios from "axios";
-import toast, { Toaster } from "react-hot-toast";
+// import toast, { Toaster } from "react-hot-toast";
 
 function Update({ detailstu, setUpdate }) {
     const [images, setImages] = useState();
+    console.log(images);
     const [datas, setDatas] = useState()
 
     // const [lastname, setlastname] = useState(detailstu?.lastname);
@@ -31,7 +32,7 @@ function Update({ detailstu, setUpdate }) {
 
         const id = detailstu?._id
         e.preventDefault()
-        const res = await axios.post(`http://localhost:8000/updatestudent/${id}`, { firstname, roll_no, date, category }).then((res) => {
+         await axios.post(`http://localhost:8000/updatestudent/${id}`, { firstname, roll_no, date, category }).then((res) => {
             console.log(res)
         })
 
@@ -84,7 +85,7 @@ function Update({ detailstu, setUpdate }) {
 
                     <input type="email" name="email" placeholder="Email" required onChange={hendleChange} />
 
-                    <input type="file" name="image" onChange={(e) => setImages(e.target.files[0])} onChange={hendleChange} />
+                    <input type="file" name="image" onChange={(e) => setImages(e.target.files[0])}  />
 
                     <div className="row">
                         <select name="state" onChange={hendleChange}>

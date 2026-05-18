@@ -10,14 +10,29 @@ function TechDashboard() {
     const [teacherdata, setTeacherdata] = useState([])
     console.log(teacherdata);
 
+    // const [teacherData, setTeacherData] = useState([]);
+
+
 
     async function getTeacher() {
-        const res = await axios.get("http://localhost:8000/teacherdata").then((res) => {
+        await axios.get("http://localhost:8000/teacgergetdata").then((res) => {
             console.log(res.data.user);
             setTeacherdata(res.data.user);
+
+
+            //     const Teacher=res.data.user;
+            // const allTeacher =Teacher .filter((item) => item.course === "")
+            // setBcasetBca(allTeacher)
+
+
+            // <div className="testustacou">
+            //     <p>Teachers</p>
+            //     <h2>{teacherData.length}</h2>
+            // </div>
         })
 
     }
+
 
     useEffect(() => {
         getTeacher()
@@ -61,23 +76,28 @@ function TechDashboard() {
                                 <th>Veiw</th>
                             </tr>
                         </thead>
+                        <tbody>
+                            {teacherdata && teacherdata.map((item) => {
+                                return (
+                                    <>
+                                        {/* key={item._id} */}
+                                        <tr key={item._id}>
+                                            <td>{item.fullname}</td>
+                                            <td>{item.qualification}</td>
+                                            <td>{item.contact}</td>
+                                            <td>{item.age}</td>
+                                            <td>{item.subject}</td>
+                                            <td>{item.salary}</td>
+                                            {/* <td>{item.gender}</td> */}
+                                            <td>
+                                                <Link to={`/teachdetails/${item._id}`}> 👁</Link>
+                                            </td>
+                                        </tr>
+                                    </>
+                                )
+                            })}
+                        </tbody>
                     </table>
-                    <tbody>
-                        {teacherdata && teacherdata.map((item) => {
-                            return (
-                                <>
-                                    <tr>
-                                        <td>{item.fullname}</td>
-                                        <td>{item.qualification}</td>
-                                        <td>{item.contact}</td>
-                                        <td>{item.age}</td>
-                                       
-
-                                    </tr>
-                                </>
-                            )
-                        })}
-                    </tbody>
                 </div>
             </div>
 

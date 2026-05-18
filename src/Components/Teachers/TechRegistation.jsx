@@ -8,8 +8,9 @@ import { toast } from "react-toastify";
 function TechRegistation() {
 
   const nav = useNavigate()
-  // const [image, setImage] = useState();
-  // console.log(image);
+  // const [images, setImages] = useState();
+  // console.log(images);
+
   const [teacher, setTeacher] = useState({
     fullname: "",
     qualification: "",
@@ -43,15 +44,18 @@ function TechRegistation() {
     fteacher.append("email", teacher.email)
     fteacher.append("address", teacher.address)
     fteacher.append("salary", teacher.salary)
-    fteacher.append("experience", teacher.experience)
+    fteacher.append("experience", teacher.experience);
+    fteacher.append("date", teacher.date)
+
+    // fteacher.append("image",images);
+
 
 
     console.log(fteacher)
 
-    const res = await axios.post("http://localhost:8000/teacherdata", teacher).then((res) => {
+    await axios.post("http://localhost:8000/teacherdata", teacher).then((res) => {
       console.log(res)
-      if (res.data.status)
-         {
+      if (res.data.status) {
         toast.success("success", res.data.message)
         setTimeout(() => {
           nav('/')
@@ -77,11 +81,14 @@ function TechRegistation() {
           <input type="text" name="address" placeholder="Address" onChange={getValue} />
           <input type="number" name="salary" placeholder="Salary" onChange={getValue} />
           <input type="text" name="experience" placeholder="Experience (Years)" onChange={getValue} />
-          {/* <label>Joining Date</label>
-          <input type="date" placeholder="Joining Date" onChange={getValue} />
-          <label htmlFor="">Photo :</label>
-          <input type="file" name="image"  /> */}
-          {/* onChange={(e) => setImages(e.target.files[0])} */}
+          {/* <div> */}
+            {/* <label>Select Joining Date</label>
+            <input type="date" name="date" />
+          </div> */}
+          {/* <div>
+            <label>Upload Teacher Photo</label>
+            <input type="file" name="photo" onChange={(e) => setImages(e.target.files[0])} style={{ marginLeft: "20px" }} />
+          </div> */}
 
           {/* <select name="gender" onChange={getValue}>
             <option>Select Gender</option>

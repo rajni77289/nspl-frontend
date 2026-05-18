@@ -1,5 +1,5 @@
-import { getValue } from "@testing-library/user-event/dist/utils";
-import react from "react";
+// import { getValue } from "@testing-library/user-event/dist/utils";
+import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
@@ -55,7 +55,7 @@ function Stuform() {
         console.log(fdata);
 
 
-        const res = await axios.post("http://localhost:8000/studata", fdata).then((res) => {
+         await axios.post("http://localhost:8000/studata", fdata).then((res) => {
             if (res.data.status) {
                 toast.success("success", res.data.message)
                 setTimeout(() => {
@@ -74,7 +74,7 @@ function Stuform() {
 {/* mother name or ba,bcom.bsc ye defilen nhi ho raha h  */}
 
 
-            {/* <Toaster/> */}
+            <Toaster/>
             <div className="student" style={{padding:"5px",marginBottom:"20px"}}>
                 <h3>Registration Form</h3>
                 <form htmlFor="" onSubmit={hendlesubmit} encType="multipart/form-data">

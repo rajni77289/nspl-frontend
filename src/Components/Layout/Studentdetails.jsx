@@ -1,12 +1,13 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import {  useState } from "react";
+import { useParams } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import Update from "../Layout/Update";
 
 
 function Studentdetails() {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const { id } = useParams()
 
     const [detailstu, setDetailstu] = useState()
@@ -17,19 +18,20 @@ function Studentdetails() {
         const res = await axios.get("http://localhost:8000/studentgetdata");
         let studentdata = res.data.user
         console.log("studentdata", studentdata)
-        const findStudent = await studentdata.find((item) => item._id == id)
+        // item._id == id    do tha mene 3 kr diya equal
+        const findStudent = await studentdata.find((item) => item._id === id)
         setDetailstu(findStudent);
 
     }
 
     useEffect(() => {
         getStudents()
-    }, [])
+    })
 
 
     async function deletestudent(id) {
         console.log("delete", id)
-        const res = await axios.delete(`http://localhost:8000/deletestudent/${id}`);
+         await axios.delete(`http://localhost:8000/deletestudent/${id}`);
 
     }
     return (
@@ -39,13 +41,12 @@ function Studentdetails() {
 
                 <div className="allde">
                     <div className="imgname">
-                        {/* <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" style={{ borderRadius: "10px", width: "100%", height: "190px" }} /> */}
                         <img
                             src={`data:image/;base64,${btoa(
                                 String.fromCharCode(
                                     ...new Uint8Array(detailstu?.image?.data?.data || "")
                                 )
-                            )}`} style={{ width: "70%", borderRadius: "5px", boxShadow: "0 5px 15px white" }} />
+                            )}`} style={{ width: "70%", borderRadius: "5px", boxShadow: "0 5px 15px white" }} alt="student" />
                         <div>
                             <h3 className="firstlast">{detailstu?.firstname} {detailstu?.lastname}</h3>
                             <label className="roll">Roll_No:- {detailstu?.roll_no}</label>
@@ -122,8 +123,9 @@ function Studentdetails() {
                     <button onClick={() => deletestudent(detailstu?._id)} className="delbtn">Delete</button>
                     <button onClick={() => setUpdate(true)} className="delbtn">Update</button>
                     {
-                        update == true ? <Update detailstu={detailstu} setUpdate={setUpdate} /> : ""
+                        update === true ? <Update detailstu={detailstu} setUpdate={setUpdate} /> : ""
                     }
+                    {/* update === true ?     2 tha 3 kiya h mene */}
                 </div>
 
             </div>

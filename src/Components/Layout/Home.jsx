@@ -1,7 +1,6 @@
 import React from "react";
 // import Stuform from "../Auth/Stuform";
-import { Link } from "react-router-dom";
-import Dashboard from "./Dashboard";
+// import Dashboard from "./Dashboard";
 // import Signup from "../Auth/Signup";
 
 function Home(){

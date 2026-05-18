@@ -1,11 +1,12 @@
 // import { getValue } from "@testing-library/user-event/dist/utils";
 import React from "react";
 import { useState, useEffect } from "react";
-import Saidbar from "../Saidbar";
+// import Saidbar from "../Saidbar";
 // import Search from "./Search";
-import { FaEdit } from "react-icons/fa";
-import { Link, useParams } from "react-router-dom";
-import axios from "axios";
+// import { FaEdit } from "react-icons/fa";
+// import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+// import axios from "axios";
 // import toast, { Toaster } from "react-hot-toast";
 
 import EditEnformation from "./EditEnformation";
@@ -87,7 +88,7 @@ function Profile() {
                         </div>
                         <button onClick={() => setEdituser(true)} className="delbtn" style={{marginLeft:"230px", width:"30%",marginBottom:"20px",background:"orange"}}><Link to={'/editenformation'}>Edit</Link></button>
                     {
-                        edituser == true ? <EditEnformation user={user} setEdituser={setEdituser} /> : ""
+                        edituser === true ? <EditEnformation user={user} setEdituser={setEdituser} /> : ""
                     }
                     </div>
                 </div>

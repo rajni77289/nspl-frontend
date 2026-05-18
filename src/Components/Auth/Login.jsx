@@ -21,7 +21,7 @@ function Login() {
     async function handleSubmit(e) {
         e.preventDefault()
         console.log("Login")
-        const res = await axios.post("http://localhost:8000/login", logindata).then((res) => {
+        await axios.post("http://localhost:8000/login", logindata).then((res) => {
             console.log(res)
             if (res.data.status) {
                 localStorage.setItem("nspl", JSON.stringify(res.data.user))
@@ -72,17 +72,5 @@ function Login() {
 }
 export default Login
 
-{/* {/* <div className="main">
-                <form onSubmit={handleSubmit} className="mainform">
-                    <h1>Login</h1>
 
-                    <div className="">
-                        <input type="text" name="email" placeholder="Email" onChange={getData} />
-                    </div>
-                    <div className="">
-                        <input type="text" name="password" placeholder="Password" onChange={getData} />
-                    </div>
-                    <button type="Submit" className="forbtn" style={{ marginBottom: "40px" }}>Submit</button>
-                </form>
-            </div> */}
 

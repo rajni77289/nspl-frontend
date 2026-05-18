@@ -21,7 +21,7 @@ function EditEnformation({ user, setUpdate }) {
    
  async function handleSubmit(e) {
         e.preventDefault()
-        const res = await axios.post("http://localhost:8000/profiledata", {phoneno,datebirth,email,bio,state,username}).then((res) => {
+     await axios.post("http://localhost:8000/profiledata", {phoneno,datebirth,email,bio,state,username}).then((res) => {
             console.log(res)
 
         })

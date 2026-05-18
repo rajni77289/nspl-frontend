@@ -55,7 +55,7 @@ function Stuform() {
         console.log(fdata);
 
 
-         await axios.post("http://localhost:8000/studata", fdata).then((res) => {
+         await axios.post("https://nspl-backend.vercel.app/studata", fdata).then((res) => {
             if (res.data.status) {
                 toast.success("success", res.data.message)
                 setTimeout(() => {

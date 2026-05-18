@@ -25,7 +25,7 @@ function Student() {
     
 
     async function getStudents() {
-     await axios.get("http://localhost:8000/studentgetdata").then((res) => {
+     await axios.get("https://nspl-backend.vercel.app/studentgetdata").then((res) => {
             console.log(res.data.user)
             setStudentdata(res.data.user)
 

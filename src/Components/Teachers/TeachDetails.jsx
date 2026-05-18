@@ -11,7 +11,7 @@ function TeacherDetail() {
     console.log(teachdetails);
 
     async function getTeacher() {
-        const res = await axios.get("http://localhost:8000/teacgergetdata")
+        const res = await axios.get("https://nspl-backend.vercel.app/teacgergetdata")
         let teacherdata = res.data.user
         console.log("teacherdata", teacherdata)
 

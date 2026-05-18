@@ -21,7 +21,7 @@ function Signup() {
     async function handleSubmit(e) {
         e.preventDefault()
         // check: the API
-        await axios.post("http://localhost:8000/postdata", data).then((res) => {
+        await axios.post("https://nspl-backend.vercel.app/postdata", data).then((res) => {
             console.log(res.data.status)
             if (res.data.status) {
                 toast.success("successfull signup")

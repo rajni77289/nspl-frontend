@@ -31,7 +31,7 @@ function Studentdetails() {
 
     async function deletestudent(id) {
         console.log("delete", id)
-         await axios.delete(`http://localhost:8000/deletestudent/${id}`);
+         await axios.delete(`https://nspl-backend.vercel.app/deletestudent/${id}`);
 
     }
     return (

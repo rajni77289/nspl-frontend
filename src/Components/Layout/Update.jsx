@@ -32,7 +32,7 @@ function Update({ detailstu, setUpdate }) {
 
         const id = detailstu?._id
         e.preventDefault()
-         await axios.post(`http://localhost:8000/updatestudent/${id}`, { firstname, roll_no, date, category }).then((res) => {
+         await axios.post(`https://nspl-backend.vercel.app/updatestudent/${id}`, { firstname, roll_no, date, category }).then((res) => {
             console.log(res)
         })
 

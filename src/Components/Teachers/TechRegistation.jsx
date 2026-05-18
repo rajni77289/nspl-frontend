@@ -53,7 +53,7 @@ function TechRegistation() {
 
     console.log(fteacher)
 
-    await axios.post("http://localhost:8000/teacherdata", teacher).then((res) => {
+    await axios.post("https://nspl-backend.vercel.app/teacherdata", teacher).then((res) => {
       console.log(res)
       if (res.data.status) {
         toast.success("success", res.data.message)

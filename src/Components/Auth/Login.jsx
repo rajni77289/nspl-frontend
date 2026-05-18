@@ -21,7 +21,7 @@ function Login() {
     async function handleSubmit(e) {
         e.preventDefault()
         console.log("Login")
-        await axios.post("http://localhost:8000/login", logindata).then((res) => {
+        await axios.post("https://nspl-backend.vercel.app/login", logindata).then((res) => {
             console.log(res)
             if (res.data.status) {
                 localStorage.setItem("nspl", JSON.stringify(res.data.user))

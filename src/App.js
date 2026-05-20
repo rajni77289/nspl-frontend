@@ -19,6 +19,7 @@ import TechRegistation from './Components/Teachers/TechRegistation';
 import Student from './Components/Layout/Student';
 import Attendance from './Components/Teachers/TeachAttendance/Attendance';
 import TeachDetails from './Components/Teachers/TeachDetails';
+import UpdateTeach from './Components/Teachers/UpdateTeach';
 function App() {
   return (
     <>
@@ -36,6 +37,7 @@ function App() {
             {/* <Route path='/studentdetails/:id' element={<PrivateRoute><Studentdetails /></PrivateRoute>} /> */}
             <Route path='/techregistation' element={<PrivateRoute><TechRegistation /></PrivateRoute>} />
             <Route path='/teachdetails/:id' element={<PrivateRoute><TeachDetails/></PrivateRoute>}/>
+            <Route path='/updateteach' element={<PrivateRoute><UpdateTeach/></PrivateRoute>}/>
             <Route path='/attendance' element={<PrivateRoute><Attendance /></PrivateRoute>} />
             <Route path='/studentdetails/:id' element={<PrivateRoute><Studentdetails /></PrivateRoute>} />
 

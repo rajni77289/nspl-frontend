@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 // import Saidbar from "../Layout/Saidbar";
-import TechHeader from "./TechHeader";
+// import TechHeader from "./TechHeader";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import Api from "../API/Api";
 // import "./Dashboard.css";
 
 function TechDashboard() {
@@ -15,7 +15,7 @@ function TechDashboard() {
 
 
     async function getTeacher() {
-        await axios.get("http://localhost:8000/teacgergetdata").then((res) => {
+        await Api.get("/teacgergetdata").then((res) => {
             console.log(res.data.user);
             setTeacherdata(res.data.user);
 
@@ -40,23 +40,23 @@ function TechDashboard() {
     return (
         <>
             <div className="mainteach">
-                <TechHeader />
+                {/* <TechHeader /> */}
                 <div className="childetech">
                     <div className="fourtech">
                         <div className="testustacou">
                             <p>Teachers</p>
+                            <h2>{teacherdata.length}</h2>
+                        </div>
+                        <div className="testustacou">
+                            <p></p>
                             <h2>0</h2>
                         </div>
                         <div className="testustacou">
-                            <p>Students</p>
+                            <p></p>
                             <h2>0</h2>
                         </div>
                         <div className="testustacou">
-                            <p>Staff</p>
-                            <h2>0</h2>
-                        </div>
-                        <div className="testustacou">
-                            <p>Courses</p>
+                            <p></p>
                             <h2>0</h2>
                         </div>
                     </div>

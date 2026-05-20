@@ -1,9 +1,9 @@
-import axios from "axios";
 import { useEffect } from "react";
 import {  useState } from "react";
 import { useParams } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 import Update from "../Layout/Update";
+import Api from "../API/Api";
 
 
 function Studentdetails() {
@@ -15,7 +15,7 @@ function Studentdetails() {
     const [update, setUpdate] = useState()
 
     async function getStudents() {
-        const res = await axios.get("http://localhost:8000/studentgetdata");
+        const res = await Api.get("/studentgetdata");
         let studentdata = res.data.user
         console.log("studentdata", studentdata)
         // item._id == id    do tha mene 3 kr diya equal
@@ -31,7 +31,7 @@ function Studentdetails() {
 
     async function deletestudent(id) {
         console.log("delete", id)
-         await axios.delete(`https://nspl-backend.vercel.app/deletestudent/${id}`);
+         await Api.delete(`/deletestudent/${id}`);
 
     }
     return (

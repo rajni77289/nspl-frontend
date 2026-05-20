@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import axios from "axios";
+import Api from "../API/Api";
 // import toast, { Toaster } from "react-hot-toast";
 
 function Update({ detailstu, setUpdate }) {
@@ -32,7 +32,7 @@ function Update({ detailstu, setUpdate }) {
 
         const id = detailstu?._id
         e.preventDefault()
-         await axios.post(`https://nspl-backend.vercel.app/updatestudent/${id}`, { firstname, roll_no, date, category }).then((res) => {
+         await Api.post(`/updatestudent/${id}`, { firstname, roll_no, date, category }).then((res) => {
             console.log(res)
         })
 
@@ -61,13 +61,14 @@ function Update({ detailstu, setUpdate }) {
                     <div className="row">
                         <select name="course" required onChange={hendleChange}>
                             <option value="">Select Course</option>
-                            <option value="bca">BCA</option>
+                           <option value="bca">BCA</option>
                             <option value="bba">BBA</option>
                             <option value="mca">MCA</option>
                             <option value="mba">MBA</option>
-                            <option value="bcom">B.Com</option>
+                            <option value="b.com">B.Com</option>
                             <option value="iti">ITI</option>
-                            <option value="it">IT</option>
+                            <option value="ba">B.A</option>
+                            <option value="bsc">B.Sc</option>
                         </select>
 
                         <select name="courseduration" required onChange={hendleChange}>
@@ -118,7 +119,7 @@ function Update({ detailstu, setUpdate }) {
 
                     {/* <button type="submit" className="updatebtn">Submit</button> */}
                     <button type="submit" onClick={handleSubmit} className="updatebtn">Submit</button>
-                    <button type="submit" onClick={handleSubmit} className="updatebtn">Close</button>
+                    <button type="submit" onClick={() => setUpdate(false)} className="updatebtn">Close</button>
                 </form>
             </div>
         </>

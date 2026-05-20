@@ -1,6 +1,9 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import UpdateTeach from "./UpdateTeach";
+import Api from "../API/Api";
+// import UpdateTeach from "./UpdateTeach";
+// import Update from "../Layout/Update";
 // import "./TeacherDetail.css";
 
 function TeacherDetail() {
@@ -10,8 +13,10 @@ function TeacherDetail() {
     const [teachdetails, setTeachdetails] = useState()
     console.log(teachdetails);
 
+    const [updateteachdata, setUpdateteachdata] = useState()
+
     async function getTeacher() {
-        const res = await axios.get("https://nspl-backend.vercel.app/teacgergetdata")
+        const res = await Api.get("/teacgergetdata")
         let teacherdata = res.data.user
         console.log("teacherdata", teacherdata)
 
@@ -23,6 +28,11 @@ function TeacherDetail() {
         getTeacher()
     })
 
+    async function deleteteacher(id) {
+        console.log("delete", id)
+        await Api.delete(`/deleteteacher/${id}`);
+    }
+
     return (
         <div className="teacher-container">
 
@@ -30,14 +40,14 @@ function TeacherDetail() {
 
                 {/* Header */}
                 <div className="teacher-header">
-                    <img
+                    {/* <img
                         src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
                         alt="teacher"
                         className="teacher-image"
-                    />
+                    /> */}
+                    <h2>Faculty Information</h2>
 
-                    <h1>{teachdetails?.fullname}</h1>
-                    <p>{teachdetails?.subject} Teacher</p>
+                    <h3>{teachdetails?.fullname}</h3>
                 </div>
 
                 {/* Details */}
@@ -47,7 +57,7 @@ function TeacherDetail() {
                         <h2>Personal Details</h2>
 
                         <p>Age:-  {teachdetails?.age}</p>
-                        <p>Gender:-  {teachdetails?.gender}</p>
+                        <p>Subject:-  {teachdetails?.subject}</p>
                         <p>Qualification:-  {teachdetails?.qualification}</p>
                         <p>Experience:- {teachdetails?.experience}</p>
                     </div>
@@ -65,7 +75,11 @@ function TeacherDetail() {
 
                 {/* Footer */}
                 <div className="teacher-footer">
-                    <button>Edit Profile</button>
+                    <button onClick={() => deleteteacher(teachdetails?._id)} className="techfooterbtn">Remove</button>
+                    <button onClick={() => setUpdateteachdata(true)} className="techfooterbtn">Update</button>
+                    {
+                        updateteachdata===true ? <UpdateTeach teachdetails={teachdetails} setUpdateteachdata={setUpdateteachdata} />:""
+                    }
                 </div>
 
             </div>

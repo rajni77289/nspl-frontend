@@ -1,9 +1,9 @@
 // import { getValue } from "@testing-library/user-event/dist/utils";
 import React from "react";
 import { useState } from "react";
-import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import Api from "../API/Api";
 
 
 function Stuform() {
@@ -55,15 +55,15 @@ function Stuform() {
         console.log(fdata);
 
 
-         await axios.post("https://nspl-backend.vercel.app/studata", fdata).then((res) => {
+        await Api.post("/studata", fdata).then((res) => {
             if (res.data.status) {
-                toast.success("success", res.data.message)
+                toast.success("SuccessFull Form", res.data.message)
                 setTimeout(() => {
                     nav('/')
                 }, 2000)
             }
             else {
-                toast.error("Invelid", res.data.message)
+                toast.error("Invelid Form", res.data.message)
             }
         })
     }
@@ -71,123 +71,93 @@ function Stuform() {
     return (
         <>
 
-{/* mother name or ba,bcom.bsc ye defilen nhi ho raha h  */}
+            {/* mother name or ba,bcom.bsc ye defilen nhi ho raha h  */}
 
 
-            <Toaster/>
-            <div className="student" style={{padding:"5px",marginBottom:"20px"}}>
+            <Toaster />
+
+            <div className="student">
                 <h3>Registration Form</h3>
-                <form htmlFor="" onSubmit={hendlesubmit} encType="multipart/form-data">
+
+                <form onSubmit={hendlesubmit} encType="multipart/form-data">
+
                     <div className="names">
-                        <label htmlFor="name">Name:</label>
-                        <input type="text" id="name" name="firstname" placeholder="First Name" required onChange={getValue} />
-
-                        <input type="text" id="name" name="lastname" placeholder="Last Name" onChange={getValue} />
+                        <input type="text" name="firstname" placeholder="First Name" required onChange={getValue} />
+                        <input type="text" name="lastname" placeholder="Last Name" onChange={getValue} />
                     </div>
+
                     <div className="fath">
-                        <label htmlFor="fathername">Father Name:</label>
-                        <input type="text" id="fathername" name="fathername" placeholder="Father Name" required onChange={getValue} />
+                        <input type="text" name="fathername" placeholder="Father Name" required onChange={getValue} />
                     </div>
-                    {/* <div className="fath">
-                        <label htmlFor="mothername">Mother Name:</label>
-                        <input type="text" id="mothername" name="mothername" placeholder="Mother Name" required onChange={getValue} />
-                    </div> */}
+
                     <div className="address">
-                        <label htmlFor="">Roll_No:</label>
-                        <input type="text" id="roll_no" name="roll_no" placeholder="roll_no" required onChange={getValue} />
-                        <label htmlFor="address">Address:</label>
-                        <input type="text" id="address" name="address" placeholder="Address" required onChange={getValue} />
+                        <input type="text" name="roll_no" placeholder="Roll No" required onChange={getValue} />
+                        <input type="text" name="address" placeholder="Address" required onChange={getValue} />
                     </div>
 
-                    {/* ==========================select course-============================= */}
                     <div className="sub">
-                        <label htmlFor="course">Course:</label>
-
-                        <select id="course" name="course" required onChange={getValue}>
-                            <option value="">Select</option>
+                        <select name="course" required onChange={getValue}>
+                            <option value="">Select Course</option>
                             <option value="bca">BCA</option>
                             <option value="bba">BBA</option>
                             <option value="mca">MCA</option>
                             <option value="mba">MBA</option>
                             <option value="b.com">B.Com</option>
                             <option value="iti">ITI</option>
-                            <option value="it">B.A</option>
-                            <option value="it">B.sc</option>
-
+                            <option value="ba">B.A</option>
+                            <option value="bsc">B.Sc</option>
                         </select>
 
-                        {/* =========================course Duration========================== */}
-
-                        <label htmlFor="courseduration">Course Duration:</label>
-
-                        <select id="courseduration" name="courseduration" required onChange={getValue}>
-                            <option value="">Select</option>
-                            <option value="3years">3 years</option>
-                            <option value="3years">3 years</option>
-                            <option value="3years">3 years</option>
-                            <option value="2years">2 years</option>
-                            <option value="2years">2 years</option>
-                            <option value="3years">1-2 years</option>
+                        <select name="courseduration" required onChange={getValue}>
+                            <option value="">Course Duration</option>
                             <option value="6months">6 Months</option>
+                            <option value="1-2years">1-2 Years</option>
+                            <option value="2years">2 Years</option>
+                            <option value="3years">3 Years</option>
                         </select>
                     </div>
-
 
                     <div className="date">
-                        <label htmlFor="date">Date:</label>
-                        <input type="date" name="date" id="date" required onChange={getValue} />
-
-                        <label htmlFor="photo">Photo :</label>
-                        <input type="file" name="image" onChange={(e) => setImages(e.target.files[0])} style={{ marginLeft: "20px" }} />
+                        <input type="date" name="date" required onChange={getValue} />
+                        <input type="file" name="image" onChange={(e) => setImages(e.target.files[0])} />
                     </div>
+
                     <div className="address">
-                        <label htmlFor="mobailno">Mobail No:</label>
-                        <input type="text" id="mobailno" name="mobailno" placeholder="mobailno" required onChange={getValue} />
-
-                        <label htmlFor="email">Email:</label>
-                        <input type="text" id="email" name="email" placeholder="Email" required onChange={getValue} />
+                        <input type="text" name="mobailno" placeholder="Mobile Number" required onChange={getValue} />
+                        <input type="text" name="email" placeholder="Email Address" required onChange={getValue} />
                     </div>
 
-                    {/*=========================select===================== */}
-
                     <div className="gender">
-                        <label htmlFor="state">State:</label>
+                        <input type="text" name="state" placeholder="State" required onChange={getValue} />
 
-                        <select id="state" name="state" required onChange={getValue}>
-                            <option value="">Select</option>
-                            <option value="rajasthan">Rajasthan</option>
-                            <option value="gujarat">Gujarat</option>
-                            <option value="haryana">Haryana</option>
-                            <option value="kerala">Kerala</option>
-                            <option value="andhrapradesh">Andhra Pradesh</option>
-                            <option value="goa">Goa</option>
-                            <option value="himachalpradesh">Himachal Pradesh</option>
-                        </select>
-
-                        {/* =====================category====================== */}
-
-                        <label htmlFor="category">category:</label>
-                        <select id="category" name="category" required onChange={getValue}>
-                            <option value="">Select</option>
+                        <select name="category" required onChange={getValue}>
+                            <option value="">Category</option>
                             <option value="obc">OBC</option>
-                            <option value="st">ST</option>
                             <option value="sc">SC</option>
+                            <option value="st">ST</option>
+                            <option value="st">Other</option>
                         </select>
                     </div>
 
                     <div className="gender">
-                        <label>Gender:</label><br />
+                        <div className="radio-group">
+                            <span>
+                                <input type="radio" name="gender" value="male" onChange={getValue} />
+                                Male
+                            </span>
 
-                        <label htmlFor="male">Male </label>
-                        <input type="radio" name="gender" value="male" onChange={getValue} required />
+                            <span>
+                                <input type="radio" name="gender" value="female" onChange={getValue} />
+                                Female
+                            </span>
 
-                        <label htmlFor="female">Female </label>
-                        <input type="radio" name="gender" value="female" onChange={getValue} required />
-
-                        <label htmlFor="other">Other </label>
-                        <input type="radio" name="gender" value="other" onChange={getValue} required />
-
+                            <span>
+                                <input type="radio" name="gender" value="other" onChange={getValue} />
+                                Other
+                            </span>
+                        </div>
                     </div>
+
                     <button type="submit" className="subbtn">Submit</button>
                 </form>
             </div>

@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
+import Api from "../API/Api";
 function Login() {
 
     const [logindata, setLogindata] = useState();
@@ -21,18 +21,18 @@ function Login() {
     async function handleSubmit(e) {
         e.preventDefault()
         console.log("Login")
-        await axios.post("https://nspl-backend.vercel.app/login", logindata).then((res) => {
+        await Api.post("/login", logindata).then((res) => {
             console.log(res)
             if (res.data.status) {
                 localStorage.setItem("nspl", JSON.stringify(res.data.user))
-                toast.success("successfull login")
+                toast.success("SuccessFull Login")
                 localStorage.setItem("nsplAuth", "true")
                 setTimeout(() => {
                     nav("/")
                 }, 1000)
             }
             else {
-                toast.error(res.data.message)
+                toast.error("Invelid Login",res.data.message)
             }
         })
 

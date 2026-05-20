@@ -1,5 +1,5 @@
-import axios from "axios";
 import React, { useState } from "react";
+import Api from "../../API/Api";
 
 
 function EditEnformation({ user, setUpdate }) {
@@ -21,7 +21,7 @@ function EditEnformation({ user, setUpdate }) {
    
  async function handleSubmit(e) {
         e.preventDefault()
-     await axios.post("https://nspl-backend.vercel.app/profiledata", {phoneno,datebirth,email,bio,state,username}).then((res) => {
+     await Api.post("/profiledata", {phoneno,datebirth,email,bio,state,username}).then((res) => {
             console.log(res)
 
         })

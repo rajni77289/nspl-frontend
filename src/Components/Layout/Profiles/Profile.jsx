@@ -86,7 +86,7 @@ function Profile() {
                         </div>
 
                         </div>
-                        <button onClick={() => setEdituser(true)} className="delbtn" style={{marginLeft:"230px", width:"30%",marginBottom:"20px",background:"orange"}}><Link to={'/editenformation'}>Edit</Link></button>
+                        <button onClick={() => setEdituser(true)} className="delbtn" style={{marginLeft:"230px", width:"30%",marginBottom:"20px",background:"orange"}}><Link to={'/editenformation'}>Edit Profile</Link></button>
                     {
                         edituser === true ? <EditEnformation user={user} setEdituser={setEdituser} /> : ""
                     }

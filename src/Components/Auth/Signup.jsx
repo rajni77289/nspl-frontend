@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import Api from "../API/Api";
 
 function Signup() {
     const [data, setData] = useState();
@@ -21,16 +21,16 @@ function Signup() {
     async function handleSubmit(e) {
         e.preventDefault()
         // check: the API
-        await axios.post("https://nspl-backend.vercel.app/postdata", data).then((res) => {
+        await Api.post("/postdata", data).then((res) => {
             console.log(res.data.status)
             if (res.data.status) {
-                toast.success("successfull signup")
+                toast.success("SuccessFull Signup")
                 setTimeout(() => {
                     navigete('/')
                 }, 1000)
             }
             else {
-                toast.error("Invelid")
+                toast.error("Invelid Signup")
             }
         })
     }

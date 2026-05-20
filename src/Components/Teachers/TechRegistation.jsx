@@ -1,9 +1,9 @@
 // import { getValue } from "@testing-library/user-event/dist/utils";
-import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Api from "../API/Api";
 
 function TechRegistation() {
 
@@ -53,7 +53,7 @@ function TechRegistation() {
 
     console.log(fteacher)
 
-    await axios.post("https://nspl-backend.vercel.app/teacherdata", teacher).then((res) => {
+    await Api.post("/teacherdata", teacher).then((res) => {
       console.log(res)
       if (res.data.status) {
         toast.success("success", res.data.message)

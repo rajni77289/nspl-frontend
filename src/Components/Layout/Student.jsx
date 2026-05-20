@@ -1,10 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from "axios";
-// import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FaEye } from "react-icons/fa6";
-// import { FaUser } from "react-icons/fa6";
+import Api from "../API/Api";
 
 function Student() {
 
@@ -13,35 +11,31 @@ function Student() {
 
     // const nav = useNavigate()
 
+    // const [Bca, setBca] = useState([]);
+    // const [Mba, setMba] = useState([]);
+    // const [Mca, setMca] = useState([]);
+    // const [Iti, setIti] = useState([]);
+
     const [Bca, setBca] = useState([]);
-    // const [Bba, setBba] = useState([]);
+    const [Bba, setBba] = useState([]);
     const [Mba, setMba] = useState([]);
     const [Mca, setMca] = useState([]);
     const [Iti, setIti] = useState([]);
-    // const [Ba, setBa]=useState([]);
-    // const [Bcom, setBcom] = useState([]);
-    // const [Bsc, setBsc] = useState([]);
+    const [Ba, setBa] = useState([]);
+    const [Bcom, setBcom] = useState([]);
+    const [Bsc, setBsc] = useState([]);
 
-    
+
 
     async function getStudents() {
-     await axios.get("https://nspl-backend.vercel.app/studentgetdata").then((res) => {
+        await Api.get("/studentgetdata").then((res) => {
             console.log(res.data.user)
             setStudentdata(res.data.user)
 
-            // const students = res.data.user;
-            // const bcastudent = students.filter((item) => item.course == "bba")
-            // console.log(bcastudent)
-
-            // const bcastudent2 = students.filter((item) => item.bath == "BBA")
-            // setBca(bcastudent2)
 
             const students = res.data.user
             const bcaStudents = students.filter((item) => item.course === "bca")
             setBca(bcaStudents)
-
-            // const bbaStudents = students.filter((item) => item.course == "bba")
-            // setBba(bbaStudents)
 
             const mbaStudents = students.filter((item) => item.course === "mba")
             setMba(mbaStudents)
@@ -52,14 +46,18 @@ function Student() {
             const itiStudents = students.filter((item) => item.course === "iti")
             setIti(itiStudents);
 
-            // const baStudents = students.filter((item) => item.course == "ba")
-            // setIti(baStudents);
+            const baStudent=students.filter((item)=>item.course==="ba")
+            setBa(baStudent);
 
-            // const bcomStudents = students.filter((item) => item.course == "bcom")
-            // setIti(bcomStudents);
+            const bcomStudent=students.filter((item)=>item.course==="b.com")
+            setBcom(bcomStudent);
 
-            // const bscStudents = students.filter((item) => item.course == "bsc")
-            // setIti(bscStudents);
+            const bscStudent=students.filter((item)=>item.course==="bsc")
+            setBsc(bscStudent)
+
+            const bbaStudent=students.filter((item)=>item.course==="bba")
+            setBba(bbaStudent)
+
         })
     }
 
@@ -85,7 +83,7 @@ function Student() {
                     </div>
                     <div className="cart">
                         <p>BBA Students</p>
-                        {/* <h2>{Bba.length}</h2> */}
+                        <h2>{Bba.length}</h2>
                     </div>
                     <div className="cart">
                         <p>MBA Students</p>
@@ -103,15 +101,15 @@ function Student() {
                     </div>
                     <div className="cart">
                         <p>B.A Students</p>
-                        {/* <h2>{Ba.length}</h2> */}
+                        <h2>{Ba.length}</h2>
                     </div>
                     <div className="cart">
                         <p>B.com Students</p>
-                        {/* <h2>{Bcom.length}</h2> */}
+                        <h2>{Bcom.length}</h2>
                     </div>
                     <div className="cart">
                         <p>B.sc Students</p>
-                        {/* <h2>{Bsc.length}</h2> */}
+                        <h2>{Bsc.length}</h2>
                     </div>
                 </div>
             </div>
@@ -150,7 +148,7 @@ function Student() {
                                     <td>{item.mobailno}</td>
                                     <td>{item.state}</td>
                                     <td>
-                                        <Link to={`/studentdetails/${item._id}`}><FaEye/></Link>
+                                        <Link to={`/studentdetails/${item._id}`}><FaEye /></Link>
                                     </td>
                                 </tr>
                             )

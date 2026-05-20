@@ -20,6 +20,7 @@ import Student from './Components/Layout/Student';
 import Attendance from './Components/Teachers/TeachAttendance/Attendance';
 import TeachDetails from './Components/Teachers/TeachDetails';
 import UpdateTeach from './Components/Teachers/UpdateTeach';
+// import Api from './Components/API/Api';
 function App() {
   return (
     <>
@@ -29,6 +30,8 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='*' element={<NotFound />} />
           {/* <Route path='/profile' element={<Profile />} /> */}
+          {/* <Api/> */}
+
 
           <Route path='/' element={<Dashboard />}>
             <Route path='student' element={<PrivateRoute><Student /></PrivateRoute>} />

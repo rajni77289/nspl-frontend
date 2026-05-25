@@ -28,7 +28,7 @@ function Student() {
 
 
     async function getStudents() {
-        await Api.get("/studentgetdata").then((res) => {
+        await Api.get("/allstudent").then((res) => {
             console.log(res.data.user)
             setStudentdata(res.data.user)
 
@@ -117,7 +117,7 @@ function Student() {
             {/* filters */}
             <div className="filters">
                 <button className="add-btn">
-                    <Link to="/stuform">
+                    <Link to="stuform">
                         <span style={{ color: "white", fontSize: "17px" }}>+Add Student</span>
                     </Link>
                 </button>

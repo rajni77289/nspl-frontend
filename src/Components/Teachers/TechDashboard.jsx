@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
-// import Saidbar from "../Layout/Saidbar";
-// import TechHeader from "./TechHeader";
 import { Link } from "react-router-dom";
 import Api from "../API/Api";
-// import "./Dashboard.css";
 
 function TechDashboard() {
 
@@ -15,9 +12,10 @@ function TechDashboard() {
 
 
     async function getTeacher() {
-        await Api.get("/teacgergetdata").then((res) => {
+        await Api.get("/teachergetdata").then((res) => {
             console.log(res.data.user);
             setTeacherdata(res.data.user);
+            // teacgergetdata
 
 
             //     const Teacher=res.data.user;
@@ -80,7 +78,6 @@ function TechDashboard() {
                             {teacherdata && teacherdata.map((item) => {
                                 return (
                                     <>
-                                        {/* key={item._id} */}
                                         <tr key={item._id}>
                                             <td>{item.fullname}</td>
                                             <td>{item.qualification}</td>
@@ -88,7 +85,6 @@ function TechDashboard() {
                                             <td>{item.age}</td>
                                             <td>{item.subject}</td>
                                             <td>{item.salary}</td>
-                                            {/* <td>{item.gender}</td> */}
                                             <td>
                                                 <Link to={`/teachdetails/${item._id}`}> 👁</Link>
                                             </td>
@@ -100,7 +96,6 @@ function TechDashboard() {
                     </table>
                 </div>
             </div>
-
         </>
     );
 }

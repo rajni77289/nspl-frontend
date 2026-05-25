@@ -72,11 +72,11 @@
 }
 
 /* responsive */
-/* @media (max-width: 400px) {
+@media (max-width: 400px) {
   .signup-form {
-    width: 90%;
+    width: 80%;
   }
-} */
+}
 
 /* ======================= Login =================== */
 .login-container {
@@ -140,13 +140,13 @@
 }
 
 /* responsive */
-/* @media (max-width: 400px) {
+@media (max-width: 400px) {
   .login-form {
-    width: 90%;
+    width: 0%;
   }
-} */
+}
  /* ====================== Header ==================== */
-.header {
+/* .header {
      background-color: #2f6b4f;
     color: white;
     display: flex;
@@ -157,6 +157,7 @@
 .childheader {
     margin-left: 70px;
 }
+
 .logout{
    padding: 10px;
    width: 10%;
@@ -168,7 +169,45 @@
 }
 .logout:hover{
     background-color: rgb(136, 215, 233);
+}  */
+ .header {
+    background-color: #2f6b4f;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    flex-wrap: wrap;
 }
+
+.childheader {
+    margin-left: 0;
+    flex: 1;
+}
+
+.logout {
+    padding: 10px;
+    width: auto;
+    border: none;
+    border-radius: 5px;
+    color: #764ba2;
+    cursor: pointer;
+}
+
+.logout:hover {
+    background-color: rgb(136, 215, 233);
+}
+/* @media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .logout {
+    width: 100%;
+  }
+} */
 /* ----------------student ragister------------------ */
 .student {
     max-width: 650px;
@@ -254,7 +293,7 @@
     padding: 12px;
     border: none;
     border-radius: 10px;
-    background: linear-gradient(135deg, #4a90e2, #357abd);
+    background: linear-gradient(135deg, #4b8b6d, #2f6b4f);
     color: white;
     font-size: 15px;
     cursor: pointer;
@@ -266,20 +305,72 @@
     box-shadow: 0 6px 15px rgba(37,99,235,0.25);
 }
 
-/* mobile */
-@media (max-width: 600px) {
+ /* ================= TABLET ================= */
+
+@media (max-width: 768px){
+
+    .student{
+        width: 90%;
+        padding: 25px;
+        margin: auto;
+        box-sizing: border-box;
+    }
+
+    .student h3{
+        font-size: 22px;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 480px){
+
+    .student{
+        width: 95%;
+        padding: 20px;
+        margin: auto;
+        box-sizing: border-box;
+    }
+
+    .student h3{
+        font-size: 20px;
+        text-align: center;
+    }
+
     .names,
     .fath,
     .address,
     .date,
     .gender,
-    .sub {
+    .sub{
+        display: flex;
         flex-direction: column;
+        gap: 10px;
+    }
+
+    .student input,
+    .student select{
+        width: 100%;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    .radio-group{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .subbtn{
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
     }
 }
 /* ----------------Sidebar------------------------*/
 .sidebar {
-    height: 490px;
+    height: 700px;
     background-color: #2f6b4f;
     color: white;
     padding: 20px;
@@ -290,13 +381,11 @@
 
 .sidebar-logo {
     text-align: center;
-    /* margin-bottom: 30px; */
     font-size: 24px;
 }
 
 .sidebar-menu {
     list-style: none;
-    /* padding: 0; */
 }
 
 .sidebar-menu li {
@@ -304,12 +393,94 @@
     margin: 10px 0;
     border-radius: 8px;
     box-shadow: 0 2px 4px #4aa379;
-    /* cursor: pointer; */
-    /* transition: 0.3s; */
+    padding-top: 20px;
+    margin-top: 30px;
 }
 
 .sidebar-menu li:hover {
     background: rgba(255, 255, 255, 0.2);
+}
+.sidebar-menu li a{
+  color: white;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 20px;
+}
+
+/* optional hover effect */
+.sidebar-menu li a:hover{
+  color: #60a5fa;
+}
+/* Tablet */
+/* @media (max-width: 1024px) {
+  .sidebar {
+    width: 25%;
+    height: auto;
+  }
+} */
+
+/* Mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .sidebar-menu li {
+    margin-top: 15px;
+    padding: 10px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .sidebar-logo {
+    font-size: 20px;
+  }
+
+  .sidebar-menu li {
+    font-size: 14px;
+  }
+}
+/* ============ TABLET ============ */
+
+@media (max-width: 768px){
+
+    .sidebar{
+        width: 200px;
+        padding: 15px;
+    }
+
+    .sidebar h2{
+        font-size: 22px;
+    }
+
+    .sidebar-menu li{
+        padding: 10px;
+        font-size: 15px;
+    }
+}
+
+/* ============ MOBILE ============ */
+
+@media (max-width: 480px){
+
+    .sidebar{
+        width: 100%;
+        min-height: auto;
+        padding: 15px;
+    }
+
+    .sidebar h2{
+        font-size: 20px;
+    }
+
+    .sidebar-menu li{
+        font-size: 14px;
+        padding: 10px;
+    }
 }
 /* ------------------student dashboard -----------------*/
 
@@ -573,57 +744,138 @@ button:hover {
 }
 
 /* --------------- profile------------------ */
-.maincontentt {
+.profile-page{
+    background: #f4f6fb;
+    min-height: 100vh;
+    padding: 30px;
     display: flex;
-    width: 100%;
-    margin-right: 200px;
+    justify-content: center;
 }
-.profile-header {
+
+/* MAIN WRAPPER */
+.profile-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-section{
+    width: 750px;
+}
+
+/* TOP HEADER */
+.profile-top{
     display: flex;
     align-items: center;
     gap: 15px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    margin-bottom: 10px;
-    padding: 10px;
-}
-.info-card {
-    border-radius: 15px;
-    padding: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    margin-bottom: 10px;
-}
-.info-card h3 {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     margin-bottom: 20px;
 }
-.form-row {
+
+.profile-avatar{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+.profile-title h2{
+    margin: 0;
+    font-size: 22px;
+    color: #333;
+}
+
+/* CARD BOX */
+.profile-card-box{
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+.profile-card-header h3{
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    color: #444;
+    border-left: 4px solid orange;
+    padding-left: 10px;
+}
+
+/* GRID: 3 UP + 3 DOWN */
+.profile-row{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* ITEM STYLE */
+.profile-item{
+    background: #f9fafc;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    min-height: 50px;
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    /* padding-top: 10px; */
+}
+
+.profile-item label{
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.profile-item{
+    font-weight: 500;
+    color: #333;
+}
+
+/* BUTTON */
+.profile-edit-btn{
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    background: orange;
+    color: white;
+    transition: 0.3s;
+    width: 30%;
+    margin-left: 230px;
     margin-bottom: 20px;
 }
-.infoprofile {
-    padding: 5px;
-    border-bottom: 3px solid whitesmoke;
-    border-radius: 10px;
+
+.profile-edit-btn:hover{
+    background: darkorange;
+    transform: translateY(-2px);
 }
-.infoprofile label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-.addpro {
-    padding: 5px;
-    border-bottom: 3px solid whitesmoke;
-    border-radius: 10px;
-}
-.infoprofile label {
-    font-weight: 600;
-    margin-bottom: 8px;
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+    .profile-section{
+        width: 95%;
+    }
+
+    .profile-row{
+        grid-template-columns: 1fr;
+    }
+
+    .profile-edit-btn{
+        width: 100%;
+        margin-left: 0;
+    }
 }
 
 /* ..............Edit personal information---------------*/
-.editprofiles{
+/* .editprofiles{
     width: 90%;
     max-width: 400px;
     margin: 20px auto;
@@ -649,6 +901,74 @@ button:hover {
 .savebtn{
     background-color: rgb(245, 169, 29);
     color: white;
+} */
+ .editprofiles{
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 40px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(57, 57, 57, 0.08);
+    box-sizing: border-box;
+}
+
+.editprofiles h3{
+    text-align: center;
+    padding: 10px;
+}
+
+.editprofiles input{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* SAVE BUTTON */
+.savebtn{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 40%;
+    margin: 20px auto 0 auto;
+    display: block;
+    background-color: rgb(245, 169, 29);
+    color: white;
+}
+
+/* HEADER FIX */
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* SIDEBAR + CONTENT LAYOUT FIX */
+.container{
+    display: flex;
+}
+
+/* MAIN CONTENT AREA */
+.main-content{
+    flex: 1;
+    padding: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+
+    .container{
+        flex-direction: column;
+    }
+
+    .sidebar{
+        width: 100%;
+        min-width: auto;
+    }
+
+    .header{
+        flex-wrap: wrap;
+        white-space: normal;
+        text-align: center;
+    }
 }
 /* ====================== ==============   Teacher ======== ================== */
 
@@ -794,6 +1114,7 @@ margin: 15px;
 .detail-box p{
     margin: 12px 0;
     font-size: 17px;
+    border-bottom: rgb(31, 116, 181) 1px solid;
 }
 
 .detail-box span{
@@ -976,13 +1297,363 @@ margin: 15px;
     }
 
 }
-/* ------------ Attendance ----------------- */
-.Attendance{
-
-}
-.childattendanc1st{
+/* -----------------------Attendance form-------------------- */
+.attendance-form-wrapper{
+    width: 100%;
+    min-height: 100vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f7fb;
+    padding: 20px;
+    box-sizing: border-box;
 }
-.childattendanc1st h4{
-    font-size: 20px;
+
+.attendance-form{
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.08);
+}
+
+.attendance-form-title{
+    text-align: center;
+    margin-bottom: 25px;
+    color: #222;
+    font-size: 28px;
+}
+
+.attendance-input-box{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.attendance-input-box label{
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #444;
+    font-weight: 500;
+}
+
+.attendance-input-box input{
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+}
+
+.attendance-input-box input:focus{
+    border-color: #2563eb;
+}
+
+.attendance-submit-btn{
+    width: 100%;
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.attendance-submit-btn:hover{
+    background: #1d4ed8;
+}
+
+/* ------------ Attendance ----------------- */
+.attendance-wrapper{
+    width: 100%;
+    padding: 20px;
+    background: #f4f7fb;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.attendance-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.attendance-title{
+    font-size: 24px;
+    color: #222;
+    font-weight: 700;
+}
+
+.add-attendance-btn{
+    border: none;
+    outline: none;
+    background: #2563eb;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-attendance-btn:hover{
+    background: #1d4ed8;
+}
+
+.add-attendance-btn a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.attendance-table-box{
+    width: 95%;
+    overflow-x: auto;
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.08);
+}
+
+.attendance-table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attendance-table th{
+    background: #2563eb;
+    color: white;
+    padding: 14px;
+    text-align: left;
+    font-size: 15px;
+}
+
+.attendance-table td{
+    padding: 14px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+    color: #444;
+}
+
+.attendance-table tr:hover{
+    background: #f9fafb;
+}
+/* -------------home----------------- */
+.home {
+  padding: 25px;
+  background: #f4f6fb;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: white;
+  padding: 50px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.hero h1 {
+  font-size: 42px;
+}
+
+.hero p {
+  margin: 15px 0;
+  max-width: 500px;
+  opacity: 0.9;
+}
+
+.hero-img img {
+  width: 260px;
+  border-radius: 15px;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.primary-btn, .secondary-btn {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.primary-btn {
+  background: white;
+  color: #2563eb;
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+}
+
+.secondary-btn {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 1px solid white;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h2 {
+  color: #2563eb;
+  font-size: 32px;
+}
+
+/* FEATURES */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.feature-box {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.feature-box:hover {
+  transform: scale(1.05);
+}
+
+.feature-box h3 {
+  color: #4f46e5;
+  margin-bottom: 10px;
+}
+/* ================= TABLET ================= */
+@media (max-width: 992px) {
+
+  .hero {
+    padding: 35px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+
+  .home {
+    padding: 15px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .feature-box {
+    padding: 20px;
+  }
+}
+/* footer---------------------- */
+.footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+    margin-top:40px;
+    border-radius:15px 15px 0 0;
+}
+
+.footer h2{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.footer p{
+    color:#cbd5e1;
+}
+
+.footer-links{
+    margin:20px 0;
+}
+
+.footer-links span{
+    margin:0 15px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.footer-links span:hover{
+    color:#60a5fa;
+}
+
+.copy{
+    margin-top:15px;
+    font-size:14px;
+    color:gray;
 }

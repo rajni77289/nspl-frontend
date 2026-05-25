@@ -27,10 +27,9 @@ function Profile() {
 
     return (
         <>
-            <div className="profile-layout">
+            {/* <div className="profile-layout">
                 <div className="maincontentt">
                     <div className="sec1st">
-                        {/* Header */}
                         <div className="profile-header">
                             <img
                                 src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
@@ -38,20 +37,16 @@ function Profile() {
                             />
                             <div>
                                 <h2>My Profile</h2>
-                                {/* <p>Teacher Name</p> */}
                             </div>
                         </div>
 
-                        {/* Personal Information */}
                         <div className="info-card">
                             <div className="edit3st">
                                 <h3>Personal Information</h3>
-                                {/* <button className="edit4nd"><Link to={'/editenformation'}>Edit <FaEdit /></Link></button> */}
                             </div>
                             <div className="form-row">
                                 <div className="infoprofile">
                                     <label>Full Name :-</label>
-                                    {/* <input type="text" placeholder="Enter your name" /> */}
                                     {user?.username}
                                 </div>
 
@@ -80,13 +75,83 @@ function Profile() {
                                 <div className="infoprofile">
                                     <label>bio :-</label>
                                     {user?.bio}
-                                    {/* <input type="text" placeholder="Enter phone number" /> */}
                                 </div>
                             </div>
                         </div>
 
                         </div>
-                        <button onClick={() => setEdituser(true)} className="delbtn" style={{marginLeft:"230px", width:"30%",marginBottom:"20px",background:"orange"}}><Link to={'/editenformation'}>Edit Profile</Link></button>
+                        <button onClick={() => setEdituser(true)} className="delbtn" style={{marginLeft:"230px", width:"30%",marginBottom:"20px",background:"orange"}}><Link to={'/editenformation'}>Edit Profile</Link></button> */}
+                        <div className="profile-page">
+    <div className="profile-container">
+        <div className="profile-section">
+
+            {/* Header */}
+            <div className="profile-top">
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                    alt="profile"
+                    className="profile-avatar"
+                />
+                <div className="profile-title">
+                    <h2>My Profile</h2>
+                </div>
+            </div>
+
+            {/* Personal Information */}
+            <div className="profile-card-box">
+                <div className="profile-card-header">
+                    <h3>Personal Information</h3>
+                </div>
+
+                <div className="profile-row">
+                    <div className="profile-item">
+                        <label>Full Name :-</label>
+                        {user?.username}
+                    </div>
+
+                    <div className="profile-item">
+                        <label>Date of Birth :-</label>
+                        {user?.datebirth}
+                    </div>
+
+                    <div className="profile-item">
+                        <label>Phone :-</label>
+                        {user?.phoneno}
+                    </div>
+                </div>
+
+                <div className="profile-row">
+                    <div className="profile-item">
+                        <label>Email :-</label>
+                        {user?.email}
+                    </div>
+
+                    <div className="profile-item">
+                        <label>State :-</label>
+                        {user?.state}
+                    </div>
+
+                    <div className="profile-item">
+                        <label>Bio :-</label>
+                        {user?.bio}
+                    </div>
+                </div>
+            </div>
+
+            <button
+                onClick={() => setEdituser(true)}
+                className="profile-edit-btn"
+                style={{
+                    marginLeft: "230px",
+                    width: "30%",
+                    marginBottom: "20px",
+                    background: "orange"
+                }}
+            >
+                <Link to={'/editenformation'}>Edit Profile</Link>
+            </button>
+
+
                     {
                         edituser === true ? <EditEnformation user={user} setEdituser={setEdituser} /> : ""
                     }

@@ -2,12 +2,10 @@
 import React from "react";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 import Api from "../API/Api";
 
 
 function Stuform() {
-    const nav = useNavigate()
     const [images, setImages] = useState();
     const [datas, setDatas] = useState({
         firstname: "",
@@ -23,6 +21,7 @@ function Stuform() {
         gender: "",
         courseduration: "",
         category: "",
+        image: ""
     })
 
     console.log(datas)
@@ -51,19 +50,18 @@ function Stuform() {
         fdata.append("courseduration", datas.courseduration)
         fdata.append("category", datas.category)
         fdata.append("image", images)
-
-        console.log(fdata);
-
-
-        await Api.post("/studata", fdata).then((res) => {
+        console.log(images);
+        await Api.post("/formstudata", fdata, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            }
+        },).then((res) => {
+            console.log(res)
             if (res.data.status) {
                 toast.success("SuccessFull Form", res.data.message)
-                setTimeout(() => {
-                    nav('/')
-                }, 2000)
             }
             else {
-                toast.error("Invelid Form", res.data.message)
+                toast.error(res.data.message)
             }
         })
     }

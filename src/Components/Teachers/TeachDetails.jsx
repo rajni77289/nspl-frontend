@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import UpdateTeach from "./UpdateTeach";
 import Api from "../API/Api";
-// import UpdateTeach from "./UpdateTeach";
-// import Update from "../Layout/Update";
-// import "./TeacherDetail.css";
+
 
 function TeacherDetail() {
 
@@ -16,17 +14,16 @@ function TeacherDetail() {
     const [updateteachdata, setUpdateteachdata] = useState()
 
     async function getTeacher() {
-        const res = await Api.get("/teacgergetdata")
+        const res = await Api.get("/teachergetdata")
         let teacherdata = res.data.user
         console.log("teacherdata", teacherdata)
-
         const findTeacher = await teacherdata.find((item) => item._id === id)
         setTeachdetails(findTeacher)
     }
 
     useEffect(() => {
         getTeacher()
-    })
+    },[id])
 
     async function deleteteacher(id) {
         console.log("delete", id)
@@ -56,19 +53,19 @@ function TeacherDetail() {
                     <div className="detail-box">
                         <h2>Personal Details</h2>
 
-                        <p>Age:-  {teachdetails?.age}</p>
-                        <p>Subject:-  {teachdetails?.subject}</p>
-                        <p>Qualification:-  {teachdetails?.qualification}</p>
-                        <p>Experience:- {teachdetails?.experience}</p>
+                        <p><spn style={{ fontWeight: "bold" }}>Age:-</spn>  {teachdetails?.age}</p>
+                        <p><spn style={{ fontWeight: "bold" }}>Subject:-</spn>  {teachdetails?.subject}</p>
+                        <p><spn style={{ fontWeight: "bold" }}>Qualification:-</spn>  {teachdetails?.qualification}</p>
+                        <p><spn style={{ fontWeight: "bold" }}>Experience:-</spn> {teachdetails?.experience}</p>
                     </div>
 
                     <div className="detail-box">
                         <h2>Contact Details</h2>
 
-                        <p>Phone:-  {teachdetails?.contact}</p>
-                        <p>Email:-  {teachdetails?.email}</p>
-                        <p>Address:-  {teachdetails?.address}</p>
-                        <p>Salary:-  {teachdetails?.salary}</p>
+                        <p><spn style={{ fontWeight: "bold" }}>Phone:-</spn>  {teachdetails?.contact}</p>
+                        <p><spn style={{ fontWeight: "bold" }}>Email:-</spn>  {teachdetails?.email}</p>
+                        <p><spn style={{ fontWeight: "bold" }}>Address:-</spn>  {teachdetails?.address}</p>
+                        <p><spn style={{ fontWeight: "bold" }}>Salary:-</spn>  {teachdetails?.salary}</p>
                     </div>
 
                 </div>

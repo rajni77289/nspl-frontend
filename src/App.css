@@ -376,7 +376,8 @@
     padding: 20px;
     width: 18%;
     margin-top: 0;
-    margin-bottom: 62px;
+    /* height: auto;    */
+    /* margin-bottom: 62px; */
 }
 
 .sidebar-logo {

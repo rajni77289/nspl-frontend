@@ -23,7 +23,7 @@ function TeacherDetail() {
 
     useEffect(() => {
         getTeacher()
-    },[id])
+    })
 
     async function deleteteacher(id) {
         console.log("delete", id)

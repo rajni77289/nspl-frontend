@@ -43,7 +43,7 @@ function TechDashboard() {
                     <div className="fourtech">
                         <div className="testustacou">
                             <p>Teachers</p>
-                            <h2>{teacherdata.length}</h2>
+                            <h2>{teacherdata?.length}</h2>
                         </div>
                         <div className="testustacou">
                             <p>.....</p>

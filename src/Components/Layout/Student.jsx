@@ -34,28 +34,28 @@ function Student() {
 
 
             const students = res.data.user
-            const bcaStudents = students.filter((item) => item.course === "bca")
+            const bcaStudents = students?.filter((item) => item.course === "bca")
             setBca(bcaStudents)
 
-            const mbaStudents = students.filter((item) => item.course === "mba")
+            const mbaStudents = students?.filter((item) => item.course === "mba")
             setMba(mbaStudents)
 
-            const mcaStudents = students.filter((item) => item.course === "mca")
+            const mcaStudents = students?.filter((item) => item.course === "mca")
             setMca(mcaStudents)
 
-            const itiStudents = students.filter((item) => item.course === "iti")
+            const itiStudents = students?.filter((item) => item.course === "iti")
             setIti(itiStudents);
 
-            const baStudent=students.filter((item)=>item.course==="ba")
+            const baStudent=students?.filter((item)=>item.course==="ba")
             setBa(baStudent);
 
-            const bcomStudent=students.filter((item)=>item.course==="b.com")
+            const bcomStudent=students?.filter((item)=>item.course==="b.com")
             setBcom(bcomStudent);
 
-            const bscStudent=students.filter((item)=>item.course==="bsc")
+            const bscStudent=students?.filter((item)=>item.course==="bsc")
             setBsc(bscStudent)
 
-            const bbaStudent=students.filter((item)=>item.course==="bba")
+            const bbaStudent=students?.filter((item)=>item.course==="bba")
             setBba(bbaStudent)
 
         })

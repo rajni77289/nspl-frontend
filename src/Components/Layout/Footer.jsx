@@ -3,7 +3,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="footer">
+    <div className="footer" style={{width:"76%",marginRight:"0px"}}>
 
       <h2>NeuroSharp</h2>
 

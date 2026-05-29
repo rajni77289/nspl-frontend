@@ -22,6 +22,8 @@ function Update({ detailstu, setUpdate }) {
     const [roll_no, setRoll_no] = useState(detailstu?.roll_no);
     const [date, setDate] = useState(detailstu?.date);
     const [category, setCategory] = useState(detailstu?.category);
+        const [mobailno, setmobailno] = useState(detailstu?.mobailno);
+
 
 
     const hendleChange = (e) => {
@@ -32,12 +34,13 @@ function Update({ detailstu, setUpdate }) {
 
         const id = detailstu?._id
         e.preventDefault()
-         await Api.post(`/updatestudent/${id}`, { firstname, roll_no, date, category }).then((res) => {
+         await Api.post(`/updatestudent/${id}`, { firstname, roll_no, date, category,mobailno}).then((res) => {
             console.log(res)
         })
 
-        // page refresh ke liye
 
+        // form submit ke bad page reload hone ke liye
+        window.location.reload();
     }
 
     return (
@@ -82,7 +85,7 @@ function Update({ detailstu, setUpdate }) {
 
                     <input type="date" name="date" required value={date} onChange={(e) => setDate(e.target.value)} />
 
-                    <input type="text" name="mobailno" placeholder="Mobile No" required onChange={hendleChange} />
+                    <input type="text" name="mobailno" placeholder="Mobile No" required onChange={(e) => setmobailno(e.target.value)} />
 
                     <input type="email" name="email" placeholder="Email" required onChange={hendleChange} />
 
@@ -118,8 +121,8 @@ function Update({ detailstu, setUpdate }) {
                     </div>
 
                     {/* <button type="submit" className="updatebtn">Submit</button> */}
-                    <button type="submit" onClick={handleSubmit} className="updatebtn">Submit</button>
-                    <button type="submit" onClick={() => setUpdate(false)} className="updatebtn">Close</button>
+                    <button type="submit" onClick={handleSubmit} className="updatebtn1st">Submit</button>
+                    <button type="submit" onClick={() => setUpdate(false)} className="updatebtn2nd">Close</button>
                 </form>
             </div>
         </>

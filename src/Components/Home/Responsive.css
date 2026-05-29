@@ -1,0 +1,329 @@
+@media (max-width: 768px) {
+
+
+/* ******************** Signup ********************* */
+    .signup-form {
+        width: 70% !important;
+
+    }
+
+/* ************************ Login ************************** */
+
+.login-form{
+    width: 65% !important;
+}
+.login-input{
+    width: 90% !important;
+}
+
+/* ************************* Header **************************** */
+    .main-cont {
+        width: 100% !important;
+        margin-right: 0px !important;
+    }
+
+    .thirdicons {
+        font-size: 20px;
+        border: none;
+        background-color: #2f6b4f;
+        color: rgb(236, 25, 25);
+        display: block !important;
+        position: absolute;
+        left: 10px;
+        top: 20px;
+    }
+    .header {
+        flex-wrap: wrap;
+        white-space: normal;
+        text-align: center;
+    }
+/* *********************** Student Register*********************** */
+.student{
+    margin-top: 30px !important;
+}
+/* radio clean */
+.gender input[type="radio"] {
+    margin-right: 3px !important;
+}
+
+.radio-group {
+    gap: 10px !important;
+}
+/* ********************** Sidebar *************************** */
+    .sidebar h2 {
+        font-size: 22px;
+    }
+
+    .sidebar-menu li {
+        padding: 10px;
+        font-size: 15px;
+    }
+    .sidebar-mobile {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #2f6b4f;
+        color: white;
+        padding: 20px;
+        width: 40% !important;
+        margin-top: 0;
+        margin-left: 0px !important;
+        z-index: 99;
+    }
+    .sidebar {
+        width: 40% !important;
+        display: none;
+                position: relative;
+
+    }
+    .closeiconssiabar{
+         position: absolute;
+    top: 22px;
+    right: 15px;
+    font-size: 30px;
+    color: white;
+    background-color:#2f6b4f;
+    border: none;
+    }
+/* ********************* student dashboard ************************ */
+.student {
+        width: 90% !important;
+        padding: 25px;
+        margin: auto;
+        box-sizing: border-box;
+    }
+
+    .student h3 {
+        font-size: 22px;
+    }
+     .startchaild{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .cart{
+    width: 35%;
+  }
+  .add-btn{
+    /* margin-right: 70px; */
+    width: 99% !important;
+
+  }
+
+/* ************************* Student details ******************** */
+.allinfo{
+      /* min-width: 200px !important; */
+      /* min-width: 30%; */
+        /* padding: 18px; */
+
+
+}
+/* IMAGE SECTION */
+
+    .imgname{
+        width: 80%;
+        padding: 18px;
+    }
+
+    .imgname img{
+        height: 300px;
+    }
+
+    .firstlast{
+        font-size: 22px;
+    }
+
+    .roll{
+        font-size: 15px;
+    }
+    .allinfo{
+        /* width: 80%; */
+        /* min-width: 100%; */
+        /* padding: 20px; */
+        /* box-sizing: border-box; */
+    }
+    .genral{
+        font-size: 22px;
+    }
+
+    .father{
+        width: 140px;
+        font-size: 15px;
+    }
+
+    .point{
+        margin: 0 8px;
+    }
+
+    .datas p{
+        font-size: 15px;
+    }
+
+    /* BUTTONS */
+
+    .twobtn{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .delbtn,
+    .update{
+        width: 100%;
+    }
+/* *********************** stu---update ************************* */
+
+/* ********************* Profile ******************* */
+     .profile-section {
+        width: 95%;
+    }
+
+    .profile-row {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-edit-btn {
+        width: 100%;
+        margin-left: 0;
+    } 
+
+    .profile-page{
+        padding: 15px;
+        /* padding-bottom: 0px !important; */
+    }
+    /* Top Header */
+.profile-top{
+        flex-direction: column;
+        text-align: center;
+        padding: 18px;
+        gap: 12px;
+    }
+
+    .profile-avatar{
+        width: 85px;
+        height: 85px;
+    }
+
+    .profile-title h2{
+        font-size: 20px;
+    } 
+
+    .profile-item{
+     background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: 0.3s; 
+}
+
+.profile-item:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+    
+.profile-edit-btn{
+    width: 50% !important;
+    margin-left: 0px !important;
+    margin-left: 90px !important;
+} 
+
+/* **********************  profile / Edit personal information *********************** */
+    
+.footer{
+        width: 100% !important;
+        padding: 0px !important;
+    }
+
+    .filters button {
+        margin-left: 0px !important;
+    }
+    .container {
+        flex-direction: column;
+    }
+
+ /* ************************ TeachDashboard ************************** */
+
+
+/* ******************** TechRegistation form ************************ */
+
+
+/* *********************** Teacher details ************************ */
+ .teacher-card {
+        width: 100%;
+    }
+
+    .teacher-details {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .teacher-header h2 {
+        font-size: 28px;
+    }
+
+    .teacher-header h3 {
+        font-size: 20px;
+    }
+
+    .teacher-header p {
+        font-size: 16px;
+    }
+
+    .techfooterbtn1,
+    .techfooterbtn2 {
+        width: 40%;
+        margin: 10px;
+    }
+
+/* ******************** teacher update *********************** */
+
+
+/* ******************** Attendance form ********************* */
+
+
+/* ********************* Attendance ********************** */
+    .attendance-header{
+        flex-direction: column;
+        /* align-items: flex-start; */
+        gap: 12px;
+    }
+    .attendance-title{
+        font-size: 20px;
+    }
+    .add-attendance-btn{
+        width: 90%;
+        padding: 12px;
+        border-radius: 10px; 
+
+    }
+    .add-attendance-btn a{
+        font-size: 15px; 
+    }
+    /* Table Box */
+    .attendance-table-box{
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        overflow-x: auto;
+    }
+    .attendance-table{
+        min-width: 650px;
+    }
+    .attendance-table th{
+        padding: 12px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    .attendance-table td{
+        padding: 12px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+/* ********************** Home ******************* */
+
+
+/* *********************** Footer ************************/
+}

@@ -15,7 +15,7 @@ function Studentdetails() {
     const [update, setUpdate] = useState()
 
     async function getStudents() {
-        const res = await Api.get("/studentgetdata");
+        const res = await Api.get("/allstudent");
         let studentdata = res.data.user
         console.log("studentdata", studentdata)
         // item._id == id    do tha mene 3 kr diya equal
@@ -36,7 +36,7 @@ function Studentdetails() {
     }
     return (
         <>
-            <div className="mainstudent">
+             <div className="mainstudent">
                 <h2 className="profilepage">Student Details Page</h2>
 
                 <div className="allde">
@@ -121,14 +121,13 @@ function Studentdetails() {
                 </div>
                 <div className="twobtn">
                     <button onClick={() => deletestudent(detailstu?._id)} className="delbtn">Delete</button>
-                    <button onClick={() => setUpdate(true)} className="delbtn">Update</button>
+                    <button onClick={() => setUpdate(true)} className="update">Update</button>
                     {
                         update === true ? <Update detailstu={detailstu} setUpdate={setUpdate} /> : ""
                     }
-                    {/* update === true ?     2 tha 3 kiya h mene */}
                 </div>
 
-            </div>
+            </div> 
         </>
     )
 }

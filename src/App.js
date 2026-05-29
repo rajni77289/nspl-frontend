@@ -1,4 +1,5 @@
 import './App.css';
+import './Components/Home/Responsive.css';
 // import Home from './Components/Layout/Home';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Signup from './Components/Auth/Signup';
@@ -19,6 +20,7 @@ import UpdateTeach from './Components/Teachers/UpdateTeach';
 import Footer from './Components/Layout/Footer';
 import Home from './Components/Home/Home';
 import Attendanceform from './Components/Teachers/TeachAttendance/Attendanceform';
+// import Notification from './Components/Home/Notification';
 function App() {
   return (
     <>
@@ -27,6 +29,8 @@ function App() {
           {/* PUBLIC ROUTES */}
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
+          {/* <Route path='home' element={<Home/>}/> */}
+
 
           {/* PUBLIC / SIMPLE PROTECTED */}
           {/* <Route path='/student' element={<PrivateRoute><Student /></PrivateRoute>} /> */}
@@ -35,7 +39,7 @@ function App() {
 
           {/* PROTECTED LAYOUT */}
           <Route path='/' element={<Dashboard />}>
-            <Route path='home' element={<PrivateRoute><Home/></PrivateRoute>}/>
+            <Route path='' element={<PrivateRoute><Home/></PrivateRoute>}/>
             <Route path='footer' element={<PrivateRoute><Footer/></PrivateRoute>}/>
             <Route path='student' element={<PrivateRoute><Student /></PrivateRoute>} />
             <Route path='teacher' element={<PrivateRoute><Teacher /></PrivateRoute>} />
@@ -47,7 +51,7 @@ function App() {
             <Route path='/attendanceform' element={<PrivateRoute><Attendanceform/></PrivateRoute>}/>
                        <Route path='/attendance' element={<PrivateRoute><Attendance /></PrivateRoute>} />
             <Route path='/editenformation' element={<PrivateRoute><EditEnformation /></PrivateRoute>} />
-
+            {/* <Route path='/notification' element={<PrivateRoute><Notification/></PrivateRoute>}/> */}
 
             {/* public inside dashboard */}
             <Route path='profile' element={<Profiles />} />

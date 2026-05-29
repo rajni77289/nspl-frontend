@@ -51,7 +51,7 @@ function Stuform() {
         fdata.append("category", datas.category)
         fdata.append("image", images)
         console.log(images);
-        await Api.post("/formstudata", fdata, {
+        await Api.post("/studata", fdata, {
             headers: {
                 "Content-Type": "multipart/form-data",
             }
@@ -64,12 +64,14 @@ function Stuform() {
                 toast.error(res.data.message)
             }
         })
+        
+        // form submit ke bad page reload hone ke liye
+        window.location.reload();
     }
 
     return (
         <>
 
-            {/* mother name or ba,bcom.bsc ye defilen nhi ho raha h  */}
 
 
             <Toaster />
@@ -133,7 +135,7 @@ function Stuform() {
                             <option value="obc">OBC</option>
                             <option value="sc">SC</option>
                             <option value="st">ST</option>
-                            <option value="st">Other</option>
+                            <option value="other">Other</option>
                         </select>
                     </div>
 

@@ -72,8 +72,8 @@ function TeacherDetail() {
 
                 {/* Footer */}
                 <div className="teacher-footer">
-                    <button onClick={() => deleteteacher(teachdetails?._id)} className="techfooterbtn">Remove</button>
-                    <button onClick={() => setUpdateteachdata(true)} className="techfooterbtn">Update</button>
+                    <button onClick={() => deleteteacher(teachdetails?._id)} className="techfooterbtn1">Remove</button>
+                    <button onClick={() => setUpdateteachdata(true)} className="techfooterbtn2">Update</button>
                     {
                         updateteachdata===true ? <UpdateTeach teachdetails={teachdetails} setUpdateteachdata={setUpdateteachdata} />:""
                     }

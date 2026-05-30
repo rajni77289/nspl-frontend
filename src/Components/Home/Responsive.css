@@ -18,7 +18,7 @@
         font-size: 30px;
     }
 /* ************************* Header **************************** */
-    .main-cont {
+     .main-cont {
         width: 100% !important;
         margin-right: 0px !important;
     }
@@ -27,7 +27,7 @@
         font-size: 20px;
         border: none;
         background-color: #2f6b4f;
-        color: rgb(236, 25, 25);
+        color: white;
         display: block !important;
         position: absolute;
         left: 10px;
@@ -37,7 +37,27 @@
         flex-wrap: wrap;
         white-space: normal;
         text-align: center;
+    } 
+     /* .header {
+        padding: 12px 16px;
     }
+
+    .thirdicons {
+        display: block;
+        color: white;
+    }
+
+    .childheader {
+        font-size: 16px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .main-content {
+        padding: 18px;
+    } */
 /* *********************** Student Register*********************** */
 /* .student{
     margin-top: 30px !important;
@@ -94,6 +114,7 @@
         top: 0;
         left: 0;
         background-color: #2f6b4f;
+        /* background: rgba(255, 255, 255, 0.12); */
         color: white;
         padding: 20px;
         width: 40% !important;
@@ -312,8 +333,20 @@
 
 
 /* ******************** Attendance form ********************* */
+  .attendance-form {
+        max-width: 90%;
+        padding: 30px 25px;
+        border-radius: 14px;
+    }
 
+    .attendance-form-title {
+        font-size: 22px;
+    }
 
+    .attendance-input-box input {
+        padding: 11px 12px;
+        font-size: 13px;
+    }
 /* ********************* Attendance ********************** */
     .attendance-header{
         flex-direction: column;

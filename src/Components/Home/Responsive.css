@@ -39,17 +39,46 @@
         text-align: center;
     }
 /* *********************** Student Register*********************** */
-.student{
+/* .student{
     margin-top: 30px !important;
 }
-/* radio clean */
 .gender input[type="radio"] {
     margin-right: 3px !important;
 }
 
 .radio-group {
     gap: 10px !important;
-}
+} */
+ .student {
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    .names,
+    .fath,
+    .address,
+    .date,
+    .gender,
+    .sub {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .student input,
+    .student select {
+        width: 100%;
+        min-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .gender {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .gender label {
+        margin-right: 8px;
+    }
 /* ********************** Sidebar *************************** */
     .sidebar h2 {
         font-size: 22px;

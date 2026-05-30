@@ -28,6 +28,7 @@ function Signup() {
             console.log(res.data.status)
             if (res.data.status) {
                 toast.success("SuccessFull Signup")
+                localStorage.setItem("tokenAuth",res.data.token)
                 setTimeout(() => {
                     navigate('/')
                 }, 1000)

@@ -3,19 +3,20 @@
 
 /* ******************** Signup ********************* */
     .signup-form {
-        width: 70% !important;
-
+        padding: 35px 25px;
     }
 
+    .signup-title {
+        font-size: 30px;
+    }
 /* ************************ Login ************************** */
+    .login-form {
+        padding: 35px 25px;
+    }
 
-.login-form{
-    width: 65% !important;
-}
-.login-input{
-    width: 90% !important;
-}
-
+    .login-title {
+        font-size: 30px;
+    }
 /* ************************* Header **************************** */
     .main-cont {
         width: 100% !important;

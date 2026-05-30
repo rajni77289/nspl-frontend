@@ -12,7 +12,7 @@ function Dashboard() {
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
                     <Saidbar />
 
-                    <div className="main-cont" style={{ width: "79%", marginTop: "0px", margin: "auto", marginRight: "0px" }}>
+                    <div className="main-cont" style={{ width: "80%", marginTop: "0px", margin: "auto", marginRight: "0px" }}>
                         <Header />
                         <Outlet />
                     </div>

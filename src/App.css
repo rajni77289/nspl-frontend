@@ -5,7 +5,7 @@
 }
 
 /* =================== Signup ================== */
-.signup-container {
+/* .signup-container {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -28,7 +28,6 @@
     color: #333;
 }
 
-/* input group */
 .form-group {
     margin-bottom: 18px;
 }
@@ -43,13 +42,11 @@
     transition: 0.3s;
 }
 
-/* focus effect */
 .form-group input:focus {
     border-color: #667eea;
     box-shadow: 0 0 6px rgba(102, 126, 234, 0.5);
 }
 
-/* button */
 .signup-btn {
     width: 100%;
     padding: 12px;
@@ -70,10 +67,90 @@
     color: #5a67d8;
     font-size: 12px;
     margin-top: 10px;
+} */
+.signup-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #eef4ff, #f8fbff);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.signup-form {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.signup-title {
+    text-align: center;
+    color: rgb(31, 116, 181);
+    margin-bottom: 30px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: rgb(31, 116, 181);
+    box-shadow: 0 0 8px rgba(31, 116, 181, 0.2);
+}
+
+.signup-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: rgb(31, 116, 181);
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.signup-btn:hover {
+    background: rgb(21, 92, 146);
+}
+
+.parasig {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+    color: #555;
+}
+
+.parasig a {
+    color: rgb(31, 116, 181);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.parasig a:hover {
+    text-decoration: underline;
 }
 
 /* ======================= Login =================== */
-.login-container {
+/* .login-container {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -96,7 +173,6 @@
     color: #333;
 }
 
-/* input group */
 .input-group {
     margin-bottom: 18px;
 }
@@ -116,7 +192,6 @@
     box-shadow: 0 0 6px rgba(102, 126, 234, 0.5);
 }
 
-/* button */
 .login-button {
     width: 100%;
     padding: 12px;
@@ -131,7 +206,88 @@
 
 .login-button:hover {
     background: #5a67d8;
+} */
+ .login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #eef4ff, #f8fbff);
+    padding: 20px;
+    box-sizing: border-box;
 }
+
+.login-form {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.login-title {
+    text-align: center;
+    color: rgb(31, 116, 181);
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.login-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+.login-input:focus {
+    border-color: rgb(31, 116, 181);
+    box-shadow: 0 0 8px rgba(31, 116, 181, 0.2);
+}
+
+.login-button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: rgb(31, 116, 181);
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-button:hover {
+    background: rgb(21, 92, 146);
+}
+
+.parasig {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+    color: #555;
+}
+
+.parasig a {
+    color: rgb(31, 116, 181);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.parasig a:hover {
+    text-decoration: underline;
+}
+
 /* ====================== Header ==================== */
 .header {
     background-color: #2f6b4f;
@@ -1196,20 +1352,6 @@ button:hover {
     background: #e2e8f0;
 }
 
-/* .teacher-footer button{
-    background: #2563eb;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    font-size: 18px;
-    border-radius: 10px;
-    cursor: pointer;
-    gap:20px;
-} */
-
-/* .teacher-footer button:hover{
-    background: #1d4ed8;
-} */
 .teacher-footer {
     text-align: center;
 }

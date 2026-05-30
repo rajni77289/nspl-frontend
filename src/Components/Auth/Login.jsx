@@ -32,7 +32,7 @@ function Login() {
                 }, 1000)
             }
             else {
-                toast.error("Invelid Login",res.data.message)
+                toast.error("Invalid Login",res.data.message)
             }
         })
 

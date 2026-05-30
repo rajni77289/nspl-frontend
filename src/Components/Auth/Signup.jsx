@@ -6,10 +6,10 @@ import { useNavigate } from "react-router-dom";
 import Api from "../API/Api";
 
 function Signup() {
-    const [data, setData] = useState();
+    const [data, setData] = useState({});
     console.log(data);
 
-    const navigete = useNavigate()
+    const navigate = useNavigate()
 
     function getValue(e) {
         setData({
@@ -20,17 +20,20 @@ function Signup() {
     }
     async function handleSubmit(e) {
         e.preventDefault()
+            // console.log(data);
+
         // check: the API
         await Api.post("/postdata", data).then((res) => {
+            // console.log(res.data);
             console.log(res.data.status)
             if (res.data.status) {
                 toast.success("SuccessFull Signup")
                 setTimeout(() => {
-                    navigete('/')
+                    navigate('/')
                 }, 1000)
             }
             else {
-                toast.error("Invelid Signup")
+                toast.error("Invalid Signup")
             }
         })
     }
